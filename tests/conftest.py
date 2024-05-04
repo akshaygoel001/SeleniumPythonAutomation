@@ -1,6 +1,8 @@
 import os
 
+import allure
 import pytest
+from allure_commons.types import AttachmentType
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
@@ -60,6 +62,7 @@ def pytest_runtest_makereport(item):
 
 
 def _capture_screenshot(name):
+    allure.attach(driver.get_screenshot_as_png(),name="testLoginScreen",attachment_type=AttachmentType.PNG)
     driver.save_screenshot('..//reports//'+name)
     driver.get_screenshot_as_file(name)
 
