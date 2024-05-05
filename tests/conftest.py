@@ -24,9 +24,9 @@ def setup(request):
         # driver = webdriver.Chrome(service=service_obj)
         driver=webdriver.Chrome()
     elif browser_name == "firefox":
-        #driver=webdriver.firefox()
+        driver=webdriver.Firefox()
         #service_obj = Service("D:\\geckodriver.exe")
-        driver = webdriver.Firefox(executable_path="D:\\geckodriver.exe")
+        #driver = webdriver.Firefox(executable_path="D:\\geckodriver.exe")
         #driver = webdriver.firefox(service=service_obj)
     elif browser_name == "IE":
         print("IE driver")
